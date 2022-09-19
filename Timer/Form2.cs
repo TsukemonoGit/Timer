@@ -44,14 +44,51 @@ namespace MyTimer
         }
         private void hourUp_Click(object sender, EventArgs e)
         {
-
+            if (Int32.Parse(hour_textBox.Text) < 59)
+            {
+                hour_textBox.Text = (Int32.Parse(hour_textBox.Text) + 1).ToString("00");
+            }
         }
         private void hourDown_Click(object sender, EventArgs e)
         {
-
+            if (Int32.Parse(hour_textBox.Text) > 0)
+            {
+                hour_textBox.Text = (Int32.Parse(hour_textBox.Text) - 1).ToString("00");
+            }
+        }
+        private void minuteUp_Button_Click(object sender, EventArgs e)
+        {
+            if (Int32.Parse(minute_textBox.Text) < 59)
+            {
+                minute_textBox.Text = (Int32.Parse(minute_textBox.Text) + 1).ToString("00");
+            }
         }
 
-        
+        private void minuteDown_Button_Click(object sender, EventArgs e)
+        {
+            if (Int32.Parse(minute_textBox.Text) > 0)
+            {
+                minute_textBox.Text = (Int32.Parse(minute_textBox.Text) - 1).ToString("00");
+            }
+        }
+
+        private void secondUp_Button_Click(object sender, EventArgs e)
+        {
+            if (Int32.Parse(second_textBox.Text) < 59)
+            {
+                second_textBox.Text = (Int32.Parse(second_textBox.Text) + 1).ToString("00");
+            }
+        }
+
+        private void secondDown_Button_Click(object sender, EventArgs e)
+        {
+            if (Int32.Parse(second_textBox.Text) > 0)
+            {
+                second_textBox.Text = (Int32.Parse(second_textBox.Text) - 1).ToString("00");
+            }
+        }
+
+
         //----------------------------------------
         //数字のみ受付
         private void second_KeyPress(object sender, KeyPressEventArgs e)
@@ -223,7 +260,5 @@ namespace MyTimer
         {
             this.Cursor = System.Windows.Forms.Cursors.Default;
         }
-
-      
     }
 }

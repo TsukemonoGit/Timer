@@ -29,42 +29,53 @@ namespace MyTimer
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.StartStop_Button = new System.Windows.Forms.Button();
             this.timer_Text = new System.Windows.Forms.Label();
             this.TitlerPanel1 = new System.Windows.Forms.Panel();
             this.closeButton = new System.Windows.Forms.Button();
             this.titlreLabel = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Reset_Button = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.memoTextBox = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.soundFile_Button = new System.Windows.Forms.Button();
             this.soundFile_textBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.soundTest_Button = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openSaveFormButon = new System.Windows.Forms.Button();
+            this.openLoadFormButton = new System.Windows.Forms.Button();
             this.TitlerPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // StartStop_Button
             // 
-            this.button1.Font = new System.Drawing.Font("源ノ角ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(30, 216);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 70);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "スタート";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.StartStop_Button.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.StartStop_Button.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.StartStop_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.StartStop_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StartStop_Button.Font = new System.Drawing.Font("源ノ角ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.StartStop_Button.Location = new System.Drawing.Point(40, 256);
+            this.StartStop_Button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.StartStop_Button.Name = "StartStop_Button";
+            this.StartStop_Button.Size = new System.Drawing.Size(187, 70);
+            this.StartStop_Button.TabIndex = 0;
+            this.StartStop_Button.Text = "スタート";
+            this.StartStop_Button.UseVisualStyleBackColor = false;
+            this.StartStop_Button.Click += new System.EventHandler(this.StartStop_Click);
             // 
             // timer_Text
             // 
             this.timer_Text.AutoSize = true;
-            this.timer_Text.Font = new System.Drawing.Font("源ノ角ゴシック", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.timer_Text.Location = new System.Drawing.Point(135, 137);
+            this.timer_Text.Font = new System.Drawing.Font("源ノ角ゴシック", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.timer_Text.Location = new System.Drawing.Point(107, 116);
             this.timer_Text.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.timer_Text.Name = "timer_Text";
-            this.timer_Text.Size = new System.Drawing.Size(195, 62);
+            this.timer_Text.Size = new System.Drawing.Size(253, 81);
             this.timer_Text.TabIndex = 1;
             this.timer_Text.Text = "00:00:00";
             this.timer_Text.Click += new System.EventHandler(this.label1_Click);
@@ -110,30 +121,40 @@ namespace MyTimer
             this.titlreLabel.TabIndex = 0;
             this.titlreLabel.Text = "MyTimer";
             // 
-            // button2
+            // Reset_Button
             // 
-            this.button2.Font = new System.Drawing.Font("源ノ角ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(259, 216);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(187, 70);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "リセット";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Reset_Button.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Reset_Button.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.Reset_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.Reset_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reset_Button.Font = new System.Drawing.Font("源ノ角ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Reset_Button.Location = new System.Drawing.Point(249, 256);
+            this.Reset_Button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Reset_Button.Name = "Reset_Button";
+            this.Reset_Button.Size = new System.Drawing.Size(187, 70);
+            this.Reset_Button.TabIndex = 3;
+            this.Reset_Button.Text = "リセット";
+            this.Reset_Button.UseVisualStyleBackColor = false;
+            this.Reset_Button.Click += new System.EventHandler(this.Reset_Click);
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(81, 338);
+            this.progressBar1.BackColor = System.Drawing.Color.White;
+            this.progressBar1.ForeColor = System.Drawing.Color.LimeGreen;
+            this.progressBar1.Location = new System.Drawing.Point(96, 200);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 23);
+            this.progressBar1.Size = new System.Drawing.Size(274, 25);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 4;
+            this.progressBar1.Value = 100;
             // 
-            // textBox1
+            // memoTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(30, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(315, 32);
-            this.textBox1.TabIndex = 5;
+            this.memoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.memoTextBox.Location = new System.Drawing.Point(40, 72);
+            this.memoTextBox.Name = "memoTextBox";
+            this.memoTextBox.Size = new System.Drawing.Size(353, 32);
+            this.memoTextBox.TabIndex = 5;
             // 
             // openFileDialog1
             // 
@@ -141,28 +162,34 @@ namespace MyTimer
             // 
             // soundFile_Button
             // 
+            this.soundFile_Button.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.soundFile_Button.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.soundFile_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.soundFile_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.soundFile_Button.Font = new System.Drawing.Font("Meiryo UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.soundFile_Button.Location = new System.Drawing.Point(327, 410);
+            this.soundFile_Button.Location = new System.Drawing.Point(327, 356);
             this.soundFile_Button.Name = "soundFile_Button";
             this.soundFile_Button.Size = new System.Drawing.Size(60, 30);
             this.soundFile_Button.TabIndex = 7;
             this.soundFile_Button.Text = "参照";
-            this.soundFile_Button.UseVisualStyleBackColor = true;
+            this.soundFile_Button.UseVisualStyleBackColor = false;
             this.soundFile_Button.Click += new System.EventHandler(this.soundFile_Button_Click);
             // 
             // soundFile_textBox
             // 
+            this.soundFile_textBox.BackColor = System.Drawing.SystemColors.Control;
+            this.soundFile_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.soundFile_textBox.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.soundFile_textBox.Location = new System.Drawing.Point(93, 413);
+            this.soundFile_textBox.Location = new System.Drawing.Point(93, 366);
             this.soundFile_textBox.Name = "soundFile_textBox";
             this.soundFile_textBox.ReadOnly = true;
-            this.soundFile_textBox.Size = new System.Drawing.Size(215, 23);
+            this.soundFile_textBox.Size = new System.Drawing.Size(215, 16);
             this.soundFile_textBox.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 412);
+            this.label2.Location = new System.Drawing.Point(12, 358);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 24);
             this.label2.TabIndex = 9;
@@ -170,37 +197,88 @@ namespace MyTimer
             // 
             // soundTest_Button
             // 
+            this.soundTest_Button.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.soundTest_Button.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.soundTest_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.soundTest_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.soundTest_Button.Font = new System.Drawing.Font("Meiryo UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.soundTest_Button.Location = new System.Drawing.Point(406, 410);
+            this.soundTest_Button.Location = new System.Drawing.Point(406, 356);
             this.soundTest_Button.Name = "soundTest_Button";
             this.soundTest_Button.Size = new System.Drawing.Size(60, 30);
             this.soundTest_Button.TabIndex = 10;
             this.soundTest_Button.Text = "テスト";
-            this.soundTest_Button.UseVisualStyleBackColor = true;
+            this.soundTest_Button.UseVisualStyleBackColor = false;
             this.soundTest_Button.Click += new System.EventHandler(this.soundTest_Button_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox1.Location = new System.Drawing.Point(93, 380);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(220, 1);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // openSaveFormButon
+            // 
+            this.openSaveFormButon.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.openSaveFormButon.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.openSaveFormButon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.openSaveFormButon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openSaveFormButon.Location = new System.Drawing.Point(402, 70);
+            this.openSaveFormButon.Name = "openSaveFormButon";
+            this.openSaveFormButon.Size = new System.Drawing.Size(75, 32);
+            this.openSaveFormButon.TabIndex = 12;
+            this.openSaveFormButon.Text = "保存";
+            this.openSaveFormButon.UseVisualStyleBackColor = false;
+            this.openSaveFormButon.Click += new System.EventHandler(this.openSaveFormButon_Click);
+            // 
+            // openLoadFormButton
+            // 
+            this.openLoadFormButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.openLoadFormButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.openLoadFormButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.openLoadFormButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openLoadFormButton.Location = new System.Drawing.Point(402, 108);
+            this.openLoadFormButton.Name = "openLoadFormButton";
+            this.openLoadFormButton.Size = new System.Drawing.Size(75, 34);
+            this.openLoadFormButton.TabIndex = 13;
+            this.openLoadFormButton.Text = "読込";
+            this.openLoadFormButton.UseVisualStyleBackColor = false;
+            this.openLoadFormButton.Click += new System.EventHandler(this.openLoadFormButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(486, 452);
+            this.ClientSize = new System.Drawing.Size(486, 401);
+            this.Controls.Add(this.openLoadFormButton);
+            this.Controls.Add(this.openSaveFormButon);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.soundTest_Button);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.soundFile_textBox);
             this.Controls.Add(this.soundFile_Button);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.memoTextBox);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Reset_Button);
             this.Controls.Add(this.TitlerPanel1);
             this.Controls.Add(this.timer_Text);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.StartStop_Button);
             this.Font = new System.Drawing.Font("Meiryo UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TitlerPanel1.ResumeLayout(false);
             this.TitlerPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,19 +286,23 @@ namespace MyTimer
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button StartStop_Button;
         private System.Windows.Forms.Label timer_Text;
         private System.Windows.Forms.Panel TitlerPanel1;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Label titlreLabel;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Reset_Button;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button soundFile_Button;
         private System.Windows.Forms.TextBox soundFile_textBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button soundTest_Button;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button openSaveFormButon;
+        private System.Windows.Forms.Button openLoadFormButton;
+        private System.Windows.Forms.TextBox memoTextBox;
     }
 }
 
